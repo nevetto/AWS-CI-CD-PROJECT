@@ -1,15 +1,19 @@
 from flask import Flask,request,render_template
 import numpy as np
 import pandas as pd
-
+import os
 from sklearn.preprocessing import StandardScaler
 from src.pipeline.predict_pipeline import CustomData,PredictPipeline
 
 application=Flask(__name__)
 
+
 app=application
 
-## Route for a home page
+# app.secret_key = "lskdjflksdj"
+# # comment out below and the app runs
+# app.session_cookie_name = None
+## Route for a home page 
 
 @app.route('/')
 def index():
